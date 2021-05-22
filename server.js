@@ -15,11 +15,9 @@ const knex = require('knex')
 //db -> database
 const db = knex({ 
   client: 'pg',//our client(pg->postgres)
-  connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'postgress',
-    database : 'smart-brain'
+  connection:{
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }, 
   }
 });
 
