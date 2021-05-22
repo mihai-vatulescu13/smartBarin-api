@@ -30,9 +30,7 @@ app.use(cors());
 
 //get(request) just recive a source
 app.get('/',(req,res)=>{
-  // res.send('this is working')
-  //  res.send(database.users)
-
+  res.send('Home')
 });
 
 //signin request(create a signin) when we connect(using https) endpoint
@@ -60,9 +58,10 @@ app.post('/imageUrl',(req,res)=>{
   return image.handleApi(req,res)
 })
 
+let port = 3000 || process.env.PORT;
 
-app.listen(3000,()=>{
-    console.log('app is running on port 3000')
+app.listen(port ,()=>{
+    console.log(`app is running on port ${port}`)
 });
 
 
